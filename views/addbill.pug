@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        include includes/head.pug
+    body
+        include includes/nav.pug
+        section(class="bg-light", style="height: calc(100vh - 190px)")
+          div(class="container")
+            div(class="row align-items-center justify-content-between", style="height: 500px")
+              div(class="col-sm-12 col-md-6 offset-md-3")
+                h5 Type Bill NO#
+                form(action="/addbill", method="POST", enctype="multipart/form-data")
+                  div(class="input-group input-group-lg")
+                    input(type="text", class="form-control my-3", name="billno")
+                  div(class="custom-file")
+                    input(type="file", name="billfile")
+                  <button type="submit" class="btn btn-dark btn-lg btn-block mt-3">Submit</button>
+        include includes/end.pug
